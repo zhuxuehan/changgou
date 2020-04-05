@@ -71,7 +71,7 @@ public class ParaController {
      * @return
      */
     @DeleteMapping(value = "/{id}")
-    public Result delete(@PathVariable Integer id) {
+    public Result delete(@PathVariable Long id) {
         //调用ParaService实现根据主键删除
         paraService.delete(id);
         return new Result(true, StatusCode.OK, "删除成功");
@@ -84,7 +84,7 @@ public class ParaController {
      * @return
      */
     @PutMapping(value = "/{id}")
-    public Result update(@RequestBody Para para, @PathVariable Integer id) {
+    public Result update(@RequestBody Para para, @PathVariable Long id) {
         //设置主键值
         para.setId(id);
         //调用ParaService实现修改Para
@@ -110,7 +110,7 @@ public class ParaController {
      * @return
      */
     @GetMapping("/{id}")
-    public Result<Para> findById(@PathVariable Integer id) {
+    public Result<Para> findById(@PathVariable Long id) {
         //调用ParaService实现根据主键查询Para
         Para para = paraService.findById(id);
         return new Result<Para>(true, StatusCode.OK, "查询成功", para);
@@ -134,7 +134,7 @@ public class ParaController {
      * @return
      */
     @GetMapping("/category/{id}")
-    public Result<List<Para>> findParaByCateogryId(@PathVariable(name = "id") Integer id) {
+    public Result<List<Para>> findParaByCateogryId(@PathVariable(name = "id") Long id) {
         List<Para> paraList = paraService.findParaByCateogryId(id);
         return new Result<List<Para>>(true, StatusCode.OK, "参数列表查询成功", paraList);
     }

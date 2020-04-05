@@ -37,7 +37,7 @@ public interface TemplateService {
      * 删除Template
      * @param id
      */
-    void delete(Integer id);
+    void delete(Long id);
 
     /***
      * 修改Template数据
@@ -56,7 +56,7 @@ public interface TemplateService {
      * @param id
      * @return
      */
-     Template findById(Integer id);
+     Template findById(Long id);
 
     /***
      * 查询所有Template

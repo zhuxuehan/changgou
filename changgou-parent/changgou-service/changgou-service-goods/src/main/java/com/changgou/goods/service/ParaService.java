@@ -37,7 +37,7 @@ public interface ParaService {
      * 删除Para
      * @param id
      */
-    void delete(Integer id);
+    void delete(Long id);
 
     /***
      * 修改Para数据
@@ -56,7 +56,7 @@ public interface ParaService {
      * @param id
      * @return
      */
-     Para findById(Integer id);
+     Para findById(Long id);
 
     /***
      * 查询所有Para
@@ -64,6 +64,6 @@ public interface ParaService {
      */
     List<Para> findAll();
 
-    List<Para> findParaByCateogryId(Integer id);
+    List<Para> findParaByCateogryId(Long id);
 
 }

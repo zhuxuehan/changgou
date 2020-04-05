@@ -69,7 +69,7 @@ public class CategoryController {
      * @return
      */
     @DeleteMapping(value = "/{id}")
-    public Result delete(@PathVariable Integer id) {
+    public Result delete(@PathVariable Long id) {
         //调用CategoryService实现根据主键删除
         categoryService.delete(id);
         return new Result(true, StatusCode.OK, "删除成功");
@@ -82,7 +82,7 @@ public class CategoryController {
      * @return
      */
     @PutMapping(value = "/{id}")
-    public Result update(@RequestBody Category category, @PathVariable Integer id) {
+    public Result update(@RequestBody Category category, @PathVariable Long id) {
         //设置主键值
         category.setId(id);
         //调用CategoryService实现修改Category
@@ -108,7 +108,7 @@ public class CategoryController {
      * @return
      */
     @GetMapping("/{id}")
-    public Result<Category> findById(@PathVariable Integer id) {
+    public Result<Category> findById(@PathVariable Long id) {
         //调用CategoryService实现根据主键查询Category
         Category category = categoryService.findById(id);
         return new Result<Category>(true, StatusCode.OK, "查询成功", category);

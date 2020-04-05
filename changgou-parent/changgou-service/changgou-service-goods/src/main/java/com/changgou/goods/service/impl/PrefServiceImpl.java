@@ -116,7 +116,7 @@ public class PrefServiceImpl implements PrefService {
      * @param id
      */
     @Override
-    public void delete(Integer id){
+    public void delete(Long id){
         prefMapper.deleteByPrimaryKey(id);
     }
 
@@ -144,7 +144,7 @@ public class PrefServiceImpl implements PrefService {
      * @return
      */
     @Override
-    public Pref findById(Integer id){
+    public Pref findById(Long id){
         return  prefMapper.selectByPrimaryKey(id);
     }
 

@@ -100,7 +100,7 @@ public class TemplateServiceImpl implements TemplateService {
      * @param id
      */
     @Override
-    public void delete(Integer id){
+    public void delete(Long id){
         templateMapper.deleteByPrimaryKey(id);
     }
 
@@ -128,7 +128,7 @@ public class TemplateServiceImpl implements TemplateService {
      * @return
      */
     @Override
-    public Template findById(Integer id){
+    public Template findById(Long id){
         return  templateMapper.selectByPrimaryKey(id);
     }
 

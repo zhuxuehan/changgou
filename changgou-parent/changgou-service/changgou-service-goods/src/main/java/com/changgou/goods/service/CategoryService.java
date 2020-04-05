@@ -37,7 +37,7 @@ public interface CategoryService {
      * 删除Category
      * @param id
      */
-    void delete(Integer id);
+    void delete(Long id);
 
     /***
      * 修改Category数据
@@ -56,7 +56,7 @@ public interface CategoryService {
      * @param id
      * @return
      */
-     Category findById(Integer id);
+     Category findById(Long id);
 
     /***
      * 查询所有Category

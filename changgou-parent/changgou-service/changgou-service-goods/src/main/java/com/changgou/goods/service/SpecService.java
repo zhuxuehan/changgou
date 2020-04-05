@@ -37,7 +37,7 @@ public interface SpecService {
      * 删除Spec
      * @param id
      */
-    void delete(Integer id);
+    void delete(Long id);
 
     /***
      * 修改Spec数据
@@ -56,7 +56,7 @@ public interface SpecService {
      * @param id
      * @return
      */
-     Spec findById(Integer id);
+     Spec findById(Long id);
 
     /***
      * 查询所有Spec
@@ -70,5 +70,5 @@ public interface SpecService {
      * @param id 三级分类的ID
      * @return
      */
-    List<Spec> findByCategoryId(Integer id);
+    List<Spec> findByCategoryId(Long id);
 }

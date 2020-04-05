@@ -68,7 +68,7 @@ public class PrefController {
      * @return
      */
     @DeleteMapping(value = "/{id}" )
-    public Result delete(@PathVariable Integer id){
+    public Result delete(@PathVariable Long id){
         //调用PrefService实现根据主键删除
         prefService.delete(id);
         return new Result(true,StatusCode.OK,"删除成功");
@@ -81,7 +81,7 @@ public class PrefController {
      * @return
      */
     @PutMapping(value="/{id}")
-    public Result update(@RequestBody  Pref pref,@PathVariable Integer id){
+    public Result update(@RequestBody  Pref pref,@PathVariable Long id){
         //设置主键值
         pref.setId(id);
         //调用PrefService实现修改Pref
@@ -107,7 +107,7 @@ public class PrefController {
      * @return
      */
     @GetMapping("/{id}")
-    public Result<Pref> findById(@PathVariable Integer id){
+    public Result<Pref> findById(@PathVariable Long id){
         //调用PrefService实现根据主键查询Pref
         Pref pref = prefService.findById(id);
         return new Result<Pref>(true,StatusCode.OK,"查询成功",pref);

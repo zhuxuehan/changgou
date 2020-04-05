@@ -118,7 +118,7 @@ public class SpecServiceImpl implements SpecService {
      * @param id
      */
     @Override
-    public void delete(Integer id) {
+    public void delete(Long id) {
         specMapper.deleteByPrimaryKey(id);
     }
 
@@ -149,7 +149,7 @@ public class SpecServiceImpl implements SpecService {
      * @return
      */
     @Override
-    public Spec findById(Integer id) {
+    public Spec findById(Long id) {
         return specMapper.selectByPrimaryKey(id);
     }
 
@@ -164,7 +164,7 @@ public class SpecServiceImpl implements SpecService {
     }
 
     @Override
-    public List<Spec> findByCategoryId(Integer id) {
+    public List<Spec> findByCategoryId(Long id) {
         //1.先根据商品分类的ID 获取模板的ID
         //select template_id from tb_category where id = 1216
 

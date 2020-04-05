@@ -37,7 +37,7 @@ public interface PrefService {
      * 删除Pref
      * @param id
      */
-    void delete(Integer id);
+    void delete(Long id);
 
     /***
      * 修改Pref数据
@@ -56,7 +56,7 @@ public interface PrefService {
      * @param id
      * @return
      */
-     Pref findById(Integer id);
+     Pref findById(Long id);
 
     /***
      * 查询所有Pref

@@ -116,7 +116,7 @@ public class CategoryServiceImpl implements CategoryService {
      * @param id
      */
     @Override
-    public void delete(Integer id){
+    public void delete(Long id){
         categoryMapper.deleteByPrimaryKey(id);
     }
 
@@ -144,7 +144,7 @@ public class CategoryServiceImpl implements CategoryService {
      * @return
      */
     @Override
-    public Category findById(Integer id){
+    public Category findById(Long id){
         return  categoryMapper.selectByPrimaryKey(id);
     }
 

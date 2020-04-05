@@ -68,7 +68,7 @@ public class TemplateController {
      * @return
      */
     @DeleteMapping(value = "/{id}" )
-    public Result delete(@PathVariable Integer id){
+    public Result delete(@PathVariable Long id){
         //调用TemplateService实现根据主键删除
         templateService.delete(id);
         return new Result(true,StatusCode.OK,"删除成功");
@@ -81,7 +81,7 @@ public class TemplateController {
      * @return
      */
     @PutMapping(value="/{id}")
-    public Result update(@RequestBody  Template template,@PathVariable Integer id){
+    public Result update(@RequestBody  Template template,@PathVariable Long id){
         //设置主键值
         template.setId(id);
         //调用TemplateService实现修改Template
@@ -107,7 +107,7 @@ public class TemplateController {
      * @return
      */
     @GetMapping("/{id}")
-    public Result<Template> findById(@PathVariable Integer id){
+    public Result<Template> findById(@PathVariable Long id){
         //调用TemplateService实现根据主键查询Template
         Template template = templateService.findById(id);
         return new Result<Template>(true,StatusCode.OK,"查询成功",template);

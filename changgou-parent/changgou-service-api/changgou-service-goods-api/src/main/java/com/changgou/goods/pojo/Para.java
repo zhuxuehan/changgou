@@ -1,66 +1,80 @@
 package com.changgou.goods.pojo;
 
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
-/**
- * para实体类
- *
- * @author 黑马架构师2.5
- */
-@Table(name = "tb_para")
-public class Para implements Serializable {
+/****
+ * @Author:admin
+ * @Description:Para构建
+ * @Date 2019/6/14 19:13
+ *****/
+@Table(name="tb_para")
+public class Para implements Serializable{
 
-    @Id
-    private Long id;//id
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+	private Long id;//id
+
+    @Column(name = "name")
+	private String name;//名称
+
+    @Column(name = "options")
+	private String options;//选项
+
+    @Column(name = "seq")
+	private Integer seq;//排序
+
+    @Column(name = "template_id")
+	private Integer templateId;//模板ID
 
 
-    private String name;//名称
-    private String options;//选项
-    private Integer seq;//排序
-    private Integer templateId;//模板ID
 
+	//get方法
+	public Long getId() {
+		return id;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	//set方法
+	public void setId(Long id) {
+		this.id = id;
+	}
+	//get方法
+	public String getName() {
+		return name;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	//set方法
+	public void setName(String name) {
+		this.name = name;
+	}
+	//get方法
+	public String getOptions() {
+		return options;
+	}
 
-    public String getName() {
-        return name;
-    }
+	//set方法
+	public void setOptions(String options) {
+		this.options = options;
+	}
+	//get方法
+	public Integer getSeq() {
+		return seq;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	//set方法
+	public void setSeq(Integer seq) {
+		this.seq = seq;
+	}
+	//get方法
+	public Integer getTemplateId() {
+		return templateId;
+	}
 
-    public String getOptions() {
-        return options;
-    }
-
-    public void setOptions(String options) {
-        this.options = options;
-    }
-
-    public Integer getSeq() {
-        return seq;
-    }
-
-    public void setSeq(Integer seq) {
-        this.seq = seq;
-    }
-
-    public Integer getTemplateId() {
-        return templateId;
-    }
-
-    public void setTemplateId(Integer templateId) {
-        this.templateId = templateId;
-    }
+	//set方法
+	public void setTemplateId(Integer templateId) {
+		this.templateId = templateId;
+	}
 
 
 }

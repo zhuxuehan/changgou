@@ -117,7 +117,7 @@ public class ParaServiceImpl implements ParaService {
      * @param id
      */
     @Override
-    public void delete(Integer id) {
+    public void delete(Long id) {
         paraMapper.deleteByPrimaryKey(id);
     }
 
@@ -148,7 +148,7 @@ public class ParaServiceImpl implements ParaService {
      * @return
      */
     @Override
-    public Para findById(Integer id) {
+    public Para findById(Long id) {
         return paraMapper.selectByPrimaryKey(id);
     }
 
@@ -163,7 +163,7 @@ public class ParaServiceImpl implements ParaService {
     }
 
     @Override
-    public List<Para> findParaByCateogryId(Integer id) {
+    public List<Para> findParaByCateogryId(Long id) {
         //1.根据分类的ID 获取到模板的ID
         Category category = categoryMapper.selectByPrimaryKey(id);
         //2.根据模板的ID 获取参数的列表 返回

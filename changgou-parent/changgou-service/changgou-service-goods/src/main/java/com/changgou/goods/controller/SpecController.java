@@ -69,7 +69,7 @@ public class SpecController {
      * @return
      */
     @DeleteMapping(value = "/{id}")
-    public Result delete(@PathVariable Integer id) {
+    public Result delete(@PathVariable Long id) {
         //调用SpecService实现根据主键删除
         specService.delete(id);
         return new Result(true, StatusCode.OK, "删除成功");
@@ -82,7 +82,7 @@ public class SpecController {
      * @return
      */
     @PutMapping(value = "/{id}")
-    public Result update(@RequestBody Spec spec, @PathVariable Integer id) {
+    public Result update(@RequestBody Spec spec, @PathVariable Long id) {
         //设置主键值
         spec.setId(id);
         //调用SpecService实现修改Spec
@@ -108,7 +108,7 @@ public class SpecController {
      * @return
      */
     @GetMapping("/{id}")
-    public Result<Spec> findById(@PathVariable Integer id) {
+    public Result<Spec> findById(@PathVariable Long id) {
         //调用SpecService实现根据主键查询Spec
         Spec spec = specService.findById(id);
         return new Result<Spec>(true, StatusCode.OK, "查询成功", spec);
@@ -130,7 +130,7 @@ public class SpecController {
      * 根据商品分类的ID 查询该分类对应的 规格的列表
      */
     @GetMapping("/category/{id}")
-    public Result<List<Spec>> findByCategoryId(@PathVariable(name = "id") Integer id) {
+    public Result<List<Spec>> findByCategoryId(@PathVariable(name = "id") Long id) {
         List<Spec> specList = specService.findByCategoryId(id);
         return new Result<List<Spec>>(true, StatusCode.OK, "查询规格的列表成功", specList);
     }
