@@ -12,6 +12,7 @@
     <modules>
         <module>changgou-service-goods-api</module>
         <module>changgou-service-search-api</module>
+        <module>changgou-service-user-api</module>
     </modules>
     <artifactId>changgou-service-api</artifactId>
     <description>各种服务父工程</description>

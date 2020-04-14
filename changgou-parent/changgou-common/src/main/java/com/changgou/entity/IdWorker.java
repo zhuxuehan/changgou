@@ -1,4 +1,4 @@
-package com.changgou.util;
+package com.changgou.entity;
 
 import java.lang.management.ManagementFactory;
 import java.net.InetAddress;
@@ -161,12 +161,11 @@ public class IdWorker {
 
 
     public static void main(String[] args) {
-
-        IdWorker idWorker=new IdWorker(0,0);
-
-        for(int i=0;i<10000;i++){
-            long nextId = idWorker.nextId();
-            System.out.println(nextId);
+        //推特  26万个不重复的ID
+        //参数1 参数2 是在0 -31 之间
+        IdWorker idWorker = new IdWorker(0,1);
+        for (int i = 0; i <100 ; i++) {
+            System.out.println(idWorker.nextId());//用于生成唯一的ID
         }
     }
 

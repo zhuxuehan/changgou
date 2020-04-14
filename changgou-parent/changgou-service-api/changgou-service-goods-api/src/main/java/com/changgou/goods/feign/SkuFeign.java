@@ -6,6 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -27,5 +28,5 @@ public interface SkuFeign {
      * @return
      */
     @GetMapping("/status/{status}")
-    Result<List<Sku>> findByStatus(@PathVariable(name = "status") String status);
+    Result<List<Sku>> findByStatus(@PathVariable(name = "status") String status, @RequestParam int page, @RequestParam int size);
 }

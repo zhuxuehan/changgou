@@ -13,9 +13,18 @@
         <module>changgou-service-goods</module>
         <module>changgou-service-file</module>
         <module>changgou-service-search</module>
+        <module>changgou-service-user</module>
     </modules>
     <artifactId>changgou-service</artifactId>
     <description>service parent</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.changgou</groupId>
+            <artifactId>changgou-common-db</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 
 </project>

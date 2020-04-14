@@ -124,4 +124,19 @@ public class SkuController {
         List<Sku> list = skuService.findAll();
         return new Result<List<Sku>>(true, StatusCode.OK, "查询成功", list);
     }
+
+    //根据状态 查询状态为1 的所有的符合条件的sku的列表数据返回
+    @GetMapping("/status/{status}")
+    public Result<List<Sku>> findByStatus(@PathVariable(name = "status") String status, int page, int size) {
+        PageInfo<Sku> statusPage = skuService.findByStatus(status, page, size);
+//        return new Result<List<Sku>>(true, StatusCode.OK, "查询sku列表成功", skusList);
+        return new Result(true, StatusCode.OK, "查询sku列表成功", statusPage.getList());
+    }
+
+//    @GetMapping("/status/{status}")
+//    public Result<PageInfo> findStatusPage(int page, int size) {
+//        //调用SkuService实现分页查询Sku
+//        PageInfo<Sku> pageInfo = skuService.findPage(page, size);
+//        return new Result<PageInfo>(true, StatusCode.OK, "查询成功", pageInfo);
+//    }
 }

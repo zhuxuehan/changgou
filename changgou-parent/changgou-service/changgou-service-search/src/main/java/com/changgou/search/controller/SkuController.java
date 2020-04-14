@@ -39,8 +39,8 @@ public class SkuController {
      * @param searchMap  搜索的条件 map
      * @return  resultMap  返回的结果 map
      */
-    @PostMapping
-    public Map search(@RequestBody(required = false) Map searchMap){
+    @GetMapping
+    public Map search(@RequestParam(required = false) Map searchMap){
        return  skuService.search(searchMap);
     }
 }
